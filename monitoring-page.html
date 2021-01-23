@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>smartfarm</title>
+        <link href="css/monitoring.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript">
+            function temparature_control(opt) {
+                if(opt == 'on') {
+                    location.href="/monitoring/temparature_on/:1000";
+                } else if (opt == 'off') {
+                    location.href="/monitoring/temparature_off/:1000";
+                }
+            }
+            function on_off_func() {
+                var i_value = document.getElementById("onoff_value").value;
+
+                if(i_value == 1) {
+                    document.getElementById('onoff_display').value = "ON";
+                } else if (i_value) {
+                    document.getElementById('onoff_display').value = "OFF";
+                }
+            }
+
+            function humidity_control(opt) {
+                if(opt == 'on') {
+                    location.href="/monitoring/humidity_on/:1000";
+                } else if (opt == 'off') {
+                    location.href="/monitoring/humidity_off/:1000";
+                }
+            }
+
+            
+            function co2_control(opt) {
+                if(opt == 'on') {
+                    location.href="/monitoring/co2_on/:1000";
+                } else if (opt == 'off') {
+                    location.href="/monitoring/co2_off/:1000";
+                }
+            }
+
+            function lux_control(opt) {
+                if(opt == 'on') {
+                    location.href="/monitoring/lux_on/:1000";
+                } else if (opt == 'off') {
+                    location.href="/monitoring/lux_off/:1000";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="head">
+                <div class="nav">
+                    <h2 class="logo">스마트팜</h2>
+                    <h4 class="sublogo">스마트팜 관리시스템</h4>
+                    <div class="menugroup">
+                        <div class="menu01">
+                            <a href="/monitoring" class="menu_on">
+                                <span>농장상태 모니터링</span>
+                            </a>
+                        </div>
+                        <div class="menu02">
+                            <a href="/dailyreport" class="menu_on">
+                                <span>농장 일지</span>
+                            </a>
+                        </div>
+                        <div class="menu03">
+                            <a href="/sensor" class="menu_on">
+                                <span>센서 기록 조회</span>
+                            </a>
+                        </div>
+                        <div class="menu04">
+                            <a href="/camera" class="menu_on">
+                                <span>촬영 기록 조회</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="log-box">
+                        로그인 상태입니다.
+                        <a class="btn btn-logout m110" href="login-page.html" >로그아웃</a>
+                    </div>
+                </div>
+            </div>
+<!--메뉴 라인-->
+            <div id="container">
+                <div id="contents">
+<!--탑 라인-->  <form method="post">
+                    <div class="top">
+                            <fieldset>
+                                <legend>조작</legend>
+                                <div class="wrap_box">
+                                    <div class="head_divbox">
+
+                                    </div>
+                                    <% envStatus.forEach(function(item, index){ %>
+                                    <div class="control_divbox">
+                                        <div class="temparature_status">
+                                            <div class="status_title">온도</div>
+                                            <div class="status_wrap">
+                                                <label>온도</label>
+                                                <input type="text" name="status_display" value="<%=item.temparature_status %>" style="text-align: center;" readonly/>
+                                            </div>
+                                            <div class="onoff_wrap">
+                                                <input type="text" name="onoff_value" id="onoff_value" value="<%=item.temparature_con %>" onchange="on_off_func();" style="display: none;" readonly/>
+                                                <label>전원</label>
+                                                <input type="text" name="onoff_display" id="onoff_display" onclick="on_off_func();" style="text-align: center;" readonly/>
+                                            </div>
+                                            <div class="temparature_btn">
+                                                <button type="button"  onclick="temparature_control('on');">ON</button>
+                                                <button type="button"  onclick="temparature_control('off');">OFF</button>
+                                            </div>
+                                        </div>
+                                        <div class="humidity_status">
+                                            <div class="status_title">습도</div>
+                                            <div class="text_wrap">
+                                                <input type="text" name="status_display" value="<%=item.humidity_status %>" style="text-align: center;" readonly/>
+                                            </div>
+                                            <div class="humidity_btn">
+                                                <button type="button" onclick="humidity_control('on');">ON</button>
+                                                <button type="button" onclick="humidity_control('off');">OFF</button>          
+                                            </div>
+                                        </div>
+                                        <div class="co2_status">
+                                            <div class="status_title">CO2</div>
+                                            <div class="text_wrap">
+                                                <input type="text" name="status_display" value="<%=item.co2_status %>" style="text-align: center;" readonly/>
+                                            </div>
+                                            <div class="co2_btn">
+                                                <button type="button" onclick="co2_control('on');">ON</button>
+                                                <button type="button" onclick="co2_control('off');">OFF</button>
+                                            </div>
+                                        </div>
+                                        <div class="lux_status">
+                                            <div class="status_title">조명</div>
+                                            <div class=text_wrap>
+                                                <input type="text" name="status_display" value="<%=item.lux_status %>" style="text-align: center;" readonly/>
+                                            </div>
+                                            <div class="lux_btn">
+                                                <button type="button" onclick="lux_control('on');">ON</button>
+                                                <button type="button" onclick="lux_control('off');">OFF</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </fieldset>
+                    </div>
+<!--상태 라인--></form>
+                    <div class="status">
+                        <div class="status_box">
+                            <table class="table table_date" summary="설명">
+                                <colgroup><!--상태 로그--></colgroup>
+                                <colgroup>
+                                    <col width="8%">
+                                    <col width="11%">
+                                    <col width="11%">
+                                    <col width="11%">
+                                    <col width="11%">
+                                    <col width="11%">
+                                    <col width="11%">
+                                    <col width="11%">
+                                    <col width="11%">
+                                    <col width>
+                                </colgroup>
+                                <thread>
+                                    <tr>
+                                       <th scope="col">I D</th>
+                                       <th scope="col">이름</th>
+                                       <th scope="col">온도</th>
+                                       <th scope="col">습도</th>
+                                       <th scope="col">CO2</th>
+                                       <th scope="col">조명</th>
+                                       <th scope="col">온도제어</th>
+                                       <th scope="col">습도제어</th>
+                                       <th scope="col">CO2 제어</th>
+                                       <th scope="col">조명제어</th>
+                                    </tr>
+                                </thread>
+                                <tbody>
+                                    <% envStatus.forEach(function(item, index){ %>
+                                        <tr>
+                                            <td><%=item.id %></td>
+                                            <td><%=item.name %></td>
+                                            <td><%=item.temparature_status %></td>
+                                            <td><%=item.humidity_status %></td>
+                                            <td><%=item.co2_status %></td>
+                                            <td><%=item.lux_status %></td>
+                                            <td><%=item.temparature_con %></td>
+                                            <td><%=item.humidity_con %></td>
+                                            <td><%=item.co2_con %></td>
+                                            <td><%=item.lux_con %></td>
+                                        </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--웹 워터마크 라인-->           
+            <div id="tail">
+
+            </div>
+
+
+        </div>
+    </body>
+</html>

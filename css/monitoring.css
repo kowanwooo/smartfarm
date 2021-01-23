@@ -1,0 +1,160 @@
+
+body{
+  margin: 0;
+}
+
+a{
+  text-decoration:none; color: black;
+
+  padding: 24px;
+  color: white;
+}
+
+a:hover{
+  background-color: #333;
+}
+a:active{
+  background-color: #679467;
+}
+.nav {
+    height: 70px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #3CA03C	;
+}
+
+h2{
+  padding: 20px;
+  margin: 0;
+  background-color: #147814;
+  padding-bottom: 19px;
+  padding-top: 19px;
+
+
+}
+
+h4.sublogo {
+    background-color: #147814;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+}
+
+.menugroup {
+
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.menu01 {
+
+    display: block;
+
+
+}
+
+.menu02 {
+
+}
+
+.menu03 {
+
+}
+
+.menu04 {
+
+}
+
+.log-box {
+    margin-left: 50px;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.btn {
+    margin-left: 10px;
+}
+
+/*메뉴라인*/
+
+.control_divbox {
+    display: flex;
+}
+
+.status_title {
+    font-size: 1.2rem;
+    text-align: center;
+    height: 53px;
+    line-height: 53px;
+    border-bottom: 1px solid black;
+}
+
+.temparature_status {
+    margin-right: 30px;
+    margin: auto;
+    width: 270px;
+    height: 270px;
+    border: 1px solid black;
+    margin: 20px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.text_wrap {
+    margin-top: 15px;
+}
+
+.humidity_status {
+    margin-right: 30px;
+    margin: auto;
+    width: 270px;
+    height: 270px;
+    border: 1px solid black;
+    margin: 20px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.co2_status {
+    margin-right: 30px;
+    margin: auto;
+    width: 270px;
+    height: 270px;
+    border: 1px solid black;
+    margin: 20px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.lux_status {
+    margin: auto;
+    width: 270px;
+    height: 270px;
+    border: 1px solid black;
+    margin: 20px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-top: 17px;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+.tr,th,td {
+    border: 1px solid #444444;
+    padding-left: 10px;
+}

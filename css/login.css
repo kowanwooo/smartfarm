@@ -1,0 +1,60 @@
+.main {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 3.0rem;
+    font-weight: bold;
+    margin-top: 150px;
+}
+
+.login-box {
+    border: 1px solid black;
+    border-radius: 7px;
+    text-align: center;
+    width:480px;
+    height: 250px;
+    margin-top: 30px;
+}
+
+.login-title {
+    font-size: 1.5rem;
+    background: rgba(188, 233, 196, 0.623);
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+}
+
+.id-form {
+    margin-top: 20px;
+}
+
+.pw-form {
+    margin-top: 10px;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+.login-underline {
+    font-size: 15px;
+    color: gray;
+    line-height: 45px;
+    border-bottom: 1px solid black;
+}
+
+.login-utext {
+    margin-top: 5px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.445);
+    font-family: 'NanumB';
+}

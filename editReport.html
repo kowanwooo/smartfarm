@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>SmartFarm - 일지수정</title>
+        <link href="/css/editreport.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="head">
+            <div class="nav">
+                <h2 class="logo">스마트팜</h2>
+                <h4 class="sublogo">스마트팜 관리시스템</h4>
+                <div class="menugroup">
+                    <div class="menu01">
+                        <a href="/monitoring" class="menu_on">
+                            <span>농장상태 모니터링</span>
+                        </a>
+                    </div>
+                    <div class="menu02">
+                        <a href="/dailyreport" class="menu_on">
+                            <span>농장 일지</span>
+                        </a>
+                    </div>
+                    <div class="menu03">
+                        <a href="/sensor" class="menu_on">
+                            <span>센서 기록 조회</span>
+                        </a>
+                    </div>
+                    <div class="menu04">
+                        <a href="/camera" class="menu_on">
+                            <span>촬영 기록 조회</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="log-box">
+                    로그인 상태입니다.
+                    <a class="btn btn-logout m110" href="login-page.html" >로그아웃</a>
+                </div>
+            </div>
+        </div>
+        <!--<h2>스마트팜 일지수정</h2>-->
+        <form method="post">
+            <fieldset>
+                <legend>수정하기</legend>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label>번호</label>
+                            </td>
+                            <td>
+                                <input type="text" name="seq" value="<%=daily_report.seq %>" sytle="height: 15px; width: 200px;" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>식물</label>
+                            </td>
+                            <td>
+                                <input type="text" name='plant' value="<%=daily_report.plant %>" style="height: 15px; width: 200px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>일지</label>
+                            </td>
+                            <td>
+                                <input type="text" name="report" value="<%=daily_report.report %>" style="height: 20px; width: 250px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>작성일자</label>
+                            </td>
+                            <td>
+                                <input type="text" name="date" value="<%=daily_report.report_date %>" style="height: 20px; width: 250px;">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn_group">
+                    <div class="submit_btn">
+                        <input type="submit" value="update">
+                    </div>
+                    <div class="cancel_btn">
+                        <a href="/dailyreport" class="menu_on">
+                        <sapn>취소하기</sapn>
+                        </a>
+                    </div>
+                </div>         
+            </fieldset>
+        </form>
+    </body>
+</html>

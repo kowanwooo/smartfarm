@@ -1,0 +1,76 @@
+
+.nav {
+    height: 70px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+
+h4.sublogo {
+    margin-left: 10px;
+    color: gray;
+}
+
+.menugroup {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.menu01 {
+    margin-left: 40px;
+}
+
+.menu02 {
+    margin-left: 70px;
+}
+
+.menu03 {
+    margin-left: 70px;
+}
+
+.menu04 {
+    margin-left: 70px;
+}
+
+.log-box {
+    margin-left: 50px;
+    display: flex;
+    margin-left: auto;
+}
+
+.btn {
+    margin-left: 10px;
+}
+
+/*메뉴라인*/
+
+.itr,itd {
+    margin-top: 10px;
+    padding-left: 10px;
+    display: flex;
+}
+
+.write_btn {
+    margin-top: 20px;
+    margin-left: 10px;
+    float: left;
+}
+
+.search_btn {
+    margin-top: 20px;
+    float: left;
+}
+
+.table {
+    width: 95%;
+    text-align: center;
+    margin: auto;
+    margin-top: 17px;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+}
+.tr,th,td {
+    border: 1px solid #444444;
+    padding-left: 10px;
+}

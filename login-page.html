@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>smartfarm login</title>
+        <link href="css/login.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+            function login(){
+                var id = document.getElementById('id').value;
+                var pw = document.getElementById('pw').value;
+                
+                if(id=='user1'&&pw=='1234'){
+                    location.replace('/monitoring');
+                } else {
+                    alert('계정을 확인해주세요.');
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="login-wrap">
+            <div class="main">
+                <div class="title">
+                    SmartFarm LOGIN
+                </div>
+                <div class="login-box">
+                    <div class="login-title">
+                        Login
+                    </div>
+                    <div class="id-form">
+                        <input type="text" name="user_id" id="id" value="" placeholder="I  D" style="width: 180; height: 17px; font-size: 17px;"/>
+                    </div>
+                    <div class="pw-form">
+                        <input type="password" name="user_pw" id="pw" value="" placeholder="PW" style="width: 180; height: 17px; font-size: 17px;"/>
+                    </div>
+                    <input type="hidden" name="loginType" value="admin">
+                    <div class="btn">
+                        <input type="button" onclick="login()" value="Log In">
+                    </div>
+                    <div class="login-underline">SIGN UP</div>
+                    <div class="login-utext">AI SMARTFRAM.</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
